@@ -32,7 +32,7 @@ material_id INT AUTO_INCREMENT NOT NULL,
 project_id INT NOT NULL,
 material_name VARCHAR(128) NOT NULL,
 num_required INT,
-cost DECIMAL(2,7)
+cost DECIMAL(7,2),
 PRIMARY KEY (material_id),
 FOREIGN KEY (project_id) REFERENCES project (project_id) ON DELETE CASCADE
 );
@@ -41,7 +41,7 @@ CREATE TABLE step (
 step_id INT AUTO_INCREMENT NOT NULL,
 project_id INT NOT NULL,
 step_order INT NOT NULL,
-step_text TEXT
+step_text TEXT,
 PRIMARY KEY (step_id),
 FOREIGN KEY (project_id) REFERENCES project (project_id) ON DELETE CASCADE
 );
